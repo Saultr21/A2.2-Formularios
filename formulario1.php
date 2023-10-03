@@ -50,7 +50,7 @@
     </style>
 <body class="d-flex align-items-center">
     <div class="d-flex justify-content-center container text-center formulario mt-5">
-    <form class="form">
+    <form class="form" action="recibe_datos.php" method="get">
        <p class="form-title">Formulario</p>
        <div class="input-container">
           <input id="nombre" name="nombre" type="nombre" placeholder="Nombre">
