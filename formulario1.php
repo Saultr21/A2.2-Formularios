@@ -9,71 +9,39 @@
     <title>Formulario 1</title>
 </head>
 <style>
-    .form {
-  background-color: #fff;
-  display: block;
-  padding: 1rem;
-  max-width: 350px;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
 
-.form-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  text-align: center;
-  color: #000;
-}
 
-.input-container {
-  position: relative;
-}
+</style>
 
-.input-container input, .form button {
-  outline: none;
-  border: 1px solid #e5e7eb;
-  margin: 8px 0;
-}
-
-.input-container input {
-  background-color: #fff;
-  padding: 1rem;
-  padding-right: 3rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  width: 300px;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-    </style>
 <body class="d-flex align-items-center">
-    <div class="d-flex justify-content-center container text-center formulario mt-5">
-    <form class="form" action="recibe_datos.php" method="get">
-       <p class="form-title">Formulario</p>
-       <div class="input-container">
-          <input id="nombre" name="nombre" type="nombre" placeholder="Nombre">
-          <span>
-          </span>
-      </div>
-      <div class="input-container">
-          <input id="apellidos" name="apellidos" type="apellidos" placeholder="Apellidos">
-          <span>
-          </span>
-      </div>
-        <div class="input-container">
-          <input id="email" name="email" type="email" placeholder="Correo">
-          <span>
-          </span>
-      </div>
-      <div class="input-container">
-          <input id="password" name="password" type="password" placeholder="Contraseña">
-        </div>
-         <button type="submit" class="submit btn btn-primary">Enviar</button>
+    <div class="d-flex justify-content-center container formulario mt-5">
+        <form class="form" action="recibe_datos.php" method="get">
+            <p class="form-title">Formulario</p>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="align-content-right form-control" id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input class="form-control" id="apellidos" name="apellidos" type="text" placeholder="Apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input class="form-control" id="phone" name="phone" type="text" placeholder="Número de telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Correo" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required>
+            </div>
 
-   </form>
+            <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
+        </form>
     </div>
 </body>
+
 
 </html>
