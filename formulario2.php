@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>  
 <html>
 <body>  
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="recibir_datos.php">
             <p>Sexo:
             <select name="sexo" id="sexo">
                     <option value="hombre">Hombre</option>
