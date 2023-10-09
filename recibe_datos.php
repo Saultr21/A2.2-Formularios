@@ -75,8 +75,6 @@
     </div>
 </body>
 
-
-=======
 <?php
 
 function asignaturas(){
@@ -97,4 +95,4 @@ function asignaturas(){
     }
 }
 ?>
->>>>>>> 415ef904f632398e281c00ddb72333729b41c59e
+
