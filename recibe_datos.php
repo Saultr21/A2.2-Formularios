@@ -26,7 +26,7 @@
     $sexo = isset($_GET['sexo']) ? $_GET['sexo'] : "";
     $edad = isset($_GET['edad']) ? $_GET['edad'] : "";
     $pais = isset($_GET['pais']) ? $_GET['pais'] : "";
-    $asignaturas = [];
+    $asignaturas = array_keys($_GET, "on");
     $errores = "";
 
     $errorNombre = validarNombre($nombre);
@@ -54,6 +54,24 @@
         $errores .= $errorPassword . "<br>";
     }
 
+    $errorEdad = validarEdad($edad);
+    if (!empty($errorEdad)) {
+        $errores .=$errorEdad . "<br>";
+    }
+
+    $errorPais = validarPais($pais);
+    if (!empty($errorPais)) {
+        $errores .=$errorPais . "<br>";
+    }
+
+    $errorAsignaturas = validarAsignaturas($asignaturas);
+    if (!empty($errorAsignaturas)) {
+        $errores .=$errorAsignaturas . "<br>";
+    }
+
+
+
+
     // Verifica si hay errores
     if (empty($errores)) {
         echo "Datos recibidos correctamente:<br>";
@@ -74,25 +92,3 @@
         <a href="<?php echo $pagina; ?>" class="btn btn-secondary">Volver al formulario</a>
     </div>
 </body>
-
-<?php
-
-function asignaturas(){
-    if(isset($_POST['dsw'])){
-        array_push($asignaturas, "dsw");
-    }
-    if(isset($_POST['daw'])){
-        array_push($asignaturas, "daw");
-    }
-    if(isset($_POST['fol'])){
-        array_push($asignaturas, "fol");
-    }
-    if(isset($_POST['dpl'])){
-        array_push($asignaturas, "dpl");
-    }
-    if(isset($_POST['dor'])){
-        array_push($asignaturas, "dor");
-    }
-}
-?>
-

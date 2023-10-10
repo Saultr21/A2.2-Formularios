@@ -33,4 +33,25 @@ function validarPassword($password) {
     }
     return "";
 }
+
+function validarEdad($edad) {
+    if (empty($edad))   {
+        return "El campo Edad no puede estar vacío";
+        }
+    return "";
+}
+
+function validarPais($pais) {
+    if (empty($pais))   {
+        return "El campo Pais no puede estar vacío";
+        }
+    return "";
+}
+
+function validarAsignaturas($asignaturas) {
+    if (count($asignaturas) < 2  || count($asignaturas) < 4)   {
+        return "En el campo asignaturas debe escoger menos de 5 y más de 1 asignatura";
+        }
+    return "";
+}
 ?>
