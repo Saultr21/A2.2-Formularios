@@ -49,7 +49,7 @@ function validarPais($pais) {
 }
 
 function validarAsignaturas($asignaturas) {
-    if (count($asignaturas) < 2  || count($asignaturas) < 4)   {
+    if (count($asignaturas) < 2  || count($asignaturas) > 4)   {
         return "En el campo asignaturas debe escoger menos de 5 y más de 1 asignatura";
         }
     return "";

@@ -63,12 +63,17 @@
                 echo "Apellidos: " . htmlspecialchars($apellidos) . "<br>";
                 echo "Teléfono: " . htmlspecialchars($telefono) . "<br>";
                 echo "Email: " . htmlspecialchars($email) . "<br>";
-            } 
+            } else{
+                echo "Se encontraron errores en el formulario:<br>";
+                echo $errores;
+            }
             break;
             
         case "formulario2.php":
+            echo "eso";
             $errorEdad = validarEdad($edad);
             if (!empty($errorEdad)) {
+                echo "edad";
                 $errores .=$errorEdad . "<br>";
             }
         
@@ -77,7 +82,7 @@
                 $errores .=$errorPais . "<br>";
             }
         
-            $errorAsignaturas = validarAsignaturas($asignaturas);
+            $errorAsignaturas = validarAsignaturas($asignaturas_array);
             if (!empty($errorAsignaturas)) {
                 $errores .=$errorAsignaturas . "<br>";
             }
@@ -87,6 +92,10 @@
                 echo "Edad: " . htmlspecialchars($edad) . "<br>";
                 echo "País: " . htmlspecialchars($pais) . "<br>";
                 echo "Asignaturas: " . htmlspecialchars($asignaturas) . "<br>";
+            } 
+            else{
+                echo "Se encontraron errores en el formulario:<br>";
+                echo $errores;
             }
             
             break;
