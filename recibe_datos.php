@@ -29,6 +29,14 @@
     $asignaturas = [];
     $errores = "";
 
+    switch($nombre_formulario) {
+        case "usuario":
+            $validacion = valida_usuario($_POST["nombre_usuario"]);
+            break;
+        case "producto":
+            $validacion = valida_producto($_POST["tipo_producto"]);
+            break;
+
     $errorNombre = validarNombre($nombre);
     if (!empty($errorNombre)) {
         $errores .= $errorNombre . "<br>";

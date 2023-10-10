@@ -16,7 +16,7 @@
 <body class="d-flex align-items-center">
     <div class="d-flex justify-content-center container formulario mt-5">
         <form class="form" action="recibe_datos.php" method="get">
-            <p class="form-title">Formulario</p>
+            <p class="form-title">Formulario 1</p>
             <input type="hidden" name="pagina_actual" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
