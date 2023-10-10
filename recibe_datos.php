@@ -26,58 +26,60 @@
     $sexo = isset($_GET['sexo']) ? $_GET['sexo'] : "";
     $edad = isset($_GET['edad']) ? $_GET['edad'] : "";
     $pais = isset($_GET['pais']) ? $_GET['pais'] : "";
-    $asignaturas = array_keys($_GET, "on");
+    $asignaturas_array = array_keys($_GET, "on");
+    $asignaturas = arraystring($asignaturas_array);
     $errores = "";
 
-    switch($nombre_formulario) {
-        case "usuario":
-            $validacion = valida_usuario($_POST["nombre_usuario"]);
+    switch($pagina) {
+        case "formulario1.php":
+            $errorNombre = validarNombre($nombre);
+            if (!empty($errorNombre)) {
+                $errores .= $errorNombre . "<br>";
+            }
+        
+            $errorApellidos = validarApellidos($apellidos);
+            if (!empty($errorApellidos)) {
+                $errores .= $errorApellidos . "<br>";
+            }
+        
+            $errorTelefono = validarTelefono($telefono);
+            if (!empty($errorTelefono)) {
+                $errores .= $errorTelefono . "<br>";
+            }
+        
+            $errorEmail = validarEmail($email);
+            if (!empty($errorEmail)) {
+                $errores .= $errorEmail . "<br>";
+            }
+        
+            $errorPassword = validarPassword($password);
+            if (!empty($errorPassword)) {
+                $errores .= $errorPassword . "<br>";
+            }
             break;
-        case "producto":
-            $validacion = valida_producto($_POST["tipo_producto"]);
+        case "formulario2.php":
+            $errorEdad = validarEdad($edad);
+            if (!empty($errorEdad)) {
+                $errores .=$errorEdad . "<br>";
+            }
+        
+            $errorPais = validarPais($pais);
+            if (!empty($errorPais)) {
+                $errores .=$errorPais . "<br>";
+            }
+        
+            $errorAsignaturas = validarAsignaturas($asignaturas);
+            if (!empty($errorAsignaturas)) {
+                $errores .=$errorAsignaturas . "<br>";
+            }
             break;
 
-    $errorNombre = validarNombre($nombre);
-    if (!empty($errorNombre)) {
-        $errores .= $errorNombre . "<br>";
-    }
+        }
 
-    $errorApellidos = validarApellidos($apellidos);
-    if (!empty($errorApellidos)) {
-        $errores .= $errorApellidos . "<br>";
-    }
-
-    $errorTelefono = validarTelefono($telefono);
-    if (!empty($errorTelefono)) {
-        $errores .= $errorTelefono . "<br>";
-    }
-
-    $errorEmail = validarEmail($email);
-    if (!empty($errorEmail)) {
-        $errores .= $errorEmail . "<br>";
-    }
-
-    $errorPassword = validarPassword($password);
-    if (!empty($errorPassword)) {
-        $errores .= $errorPassword . "<br>";
-    }
-
-    $errorEdad = validarEdad($edad);
-    if (!empty($errorEdad)) {
-        $errores .=$errorEdad . "<br>";
-    }
-
-    $errorPais = validarPais($pais);
-    if (!empty($errorPais)) {
-        $errores .=$errorPais . "<br>";
-    }
-
-    $errorAsignaturas = validarAsignaturas($asignaturas);
-    if (!empty($errorAsignaturas)) {
-        $errores .=$errorAsignaturas . "<br>";
-    }
-
-
+        function arraystring($asignaturas){
+            $asignaturas_sting = implode(",", $asignaturas);
+            return $asignaturas_sting;
+        }
 
 
     // Verifica si hay errores
