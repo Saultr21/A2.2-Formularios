@@ -70,10 +70,8 @@
             break;
             
         case "formulario2.php":
-            echo "eso";
             $errorEdad = validarEdad($edad);
             if (!empty($errorEdad)) {
-                echo "edad";
                 $errores .=$errorEdad . "<br>";
             }
         
@@ -119,7 +117,6 @@
     <!-- Coloca el botón de volver aquí, debajo de los mensajes de error o datos -->
     <div class="d-flex justify-content-center container mt-5">
         <br>
-        <?php echo $pagina?>
         <a href="<?php echo $pagina; ?>" class="btn btn-secondary">Volver al formulario</a>
     </div>
 </body>
