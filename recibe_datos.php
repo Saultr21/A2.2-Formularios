@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +17,15 @@
 
     // Recogemos los datos del formulario
     include "funciones_validacion.php";
-    $pagina = $_GET["pagina_actual"];
-    $nombre = $_GET["nombre"];
-    $apellidos = $_GET["apellidos"];
-    $telefono = $_GET["phone"];
-    $email = $_GET["email"];
-    $password = $_GET["password"];
-    $sexo = $_POST['sexo'];
-    $edad = $_POST['edad'];
-    $pais = $_POST['pais'];
+    $pagina = isset($_GET["pagina_actual"]) ? $_GET["pagina_actual"] : "";
+    $nombre = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
+    $apellidos = isset($_GET["apellidos"]) ? $_GET["apellidos"] : "";
+    $telefono = isset($_GET["phone"]) ? $_GET["phone"] : "";
+    $email = isset($_GET["email"]) ? $_GET["email"] : "";
+    $password = isset($_GET["password"]) ? $_GET["password"] : "";
+    $sexo = isset($_GET['sexo']) ? $_GET['sexo'] : "";
+    $edad = isset($_GET['edad']) ? $_GET['edad'] : "";
+    $pais = isset($_GET['pais']) ? $_GET['pais'] : "";
     $asignaturas = [];
     $errores = "";
 
