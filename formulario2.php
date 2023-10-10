@@ -10,6 +10,7 @@
     <body class="d-flex align-items-center">  
         <div  class="d-flex justify-content-center container formulario mt-5">
             <form method="post" action="recibe_datos.php" method="get">
+            <input type="hidden" name="pagina_actual" value="<?php echo basename($_SERVER['REQUEST_URI']); ?>">
                 <p>Sexo:
                 <select name="sexo" id="sexo">
                         <option value="hombre">Hombre</option>
