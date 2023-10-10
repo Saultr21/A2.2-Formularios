@@ -55,13 +55,20 @@
     }
 
     // Verifica si hay errores
-    if (empty($errores)) {
+    if (empty($errores) && ($pagina = "formulario1.php")) {
         echo "Datos recibidos correctamente:<br>";
         echo "Nombre: " . htmlspecialchars($nombre) . "<br>";
         echo "Apellidos: " . htmlspecialchars($apellidos) . "<br>";
         echo "Teléfono: " . htmlspecialchars($telefono) . "<br>";
         echo "Email: " . htmlspecialchars($email) . "<br>";
-    } else {
+    } 
+    elseif (empty($errores) && ($pagina = "formulario2.php")){
+        echo "Sexo: " . htmlspecialchars($sexo) . "<br>";
+        echo "Edad: " . htmlspecialchars($edad) . "<br>";
+        echo "País: " . htmlspecialchars($pais) . "<br>";
+        echo "Asignaturas: " . htmlspecialchars($asignaturas) . "<br>";
+    }
+    else {
         echo "Se encontraron errores en el formulario:<br>";
         echo $errores;
     }
