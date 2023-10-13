@@ -8,10 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>Formulario 1</title>
 </head>
-<style>
 
-
-</style>
+<?php
+$opciones_defecto = array (
+    "nombre" => "Nombre",
+    "apellidos" => "Apellidos",
+    "phone" => "555111222",
+    "email" => "correo@gmail.com",
+    "password" => "contraseña",
+);
+?>
 
 <body class="d-flex align-items-center">
     <div class="d-flex justify-content-center container formulario mt-5">
@@ -20,29 +26,30 @@
             <input type="hidden" name="pagina_actual" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <div class="form-group">
                 <label for="nombre">Nombre: </label>
-                <input class="align-content-right form-control" id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+                <input class="align-content-right form-control" id="nombre" name="nombre" type="text" placeholder="Nombre" required value="<?php echo $opciones_defecto['nombre']; ?>">
             </div>
             <div class="form-group">
                 <label for="apellidos">Apellidos:</label>
-                <input class="form-control" id="apellidos" name="apellidos" type="text" placeholder="Apellidos" required>
+                <input class="form-control" id="apellidos" name="apellidos" type="text" placeholder="Apellidos" required value="<?php echo $opciones_defecto['apellidos']; ?>">
             </div>
             <div class="form-group">
                 <label for="phone">Teléfono:</label>
-                <input class="form-control" id="phone" name="phone" type="text" placeholder="Número de telefono" required>
+                <input class="form-control" id="phone" name="phone" type="text" placeholder="Número de telefono" required value="<?php echo $opciones_defecto['phone']; ?>">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input class="form-control" id="email" name="email" type="email" placeholder="Correo" required>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Correo" required value="<?php echo $opciones_defecto['email']; ?>">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required>
+                <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required value="<?php echo $opciones_defecto['password']; ?>">
             </div>
 
             <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
         </form>
     </div>
 </body>
+
 
 
 </html>

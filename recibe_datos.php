@@ -18,6 +18,7 @@
     // Recogemos los datos del formulario
     include "funciones_validacion.php";
     $pagina = isset($_GET["pagina_actual"]) ? $_GET["pagina_actual"] : "";
+    // Con el basename solo sacamos el nombre del fichero, no toda la URL
     $name_pagina = isset($_GET["pagina_actual"]) ? basename($_GET["pagina_actual"]) : "";
     $nombre = isset($_GET["nombre"]) ? $_GET["nombre"] : "";
     $apellidos = isset($_GET["apellidos"]) ? $_GET["apellidos"] : "";
@@ -31,6 +32,7 @@
     $asignaturas = arraystring($asignaturas_array);
     $errores = "";
 
+    // Comprobamos si los datos vienen de un formulario u otro para hacer las validaciones correspondientes
     switch($name_pagina) {
         case "formulario1.php":
             $errorNombre = validarNombre($nombre);
@@ -111,7 +113,6 @@
     ?>
     </div>
     
-    <!-- Coloca el botón de volver aquí, debajo de los mensajes de error o datos -->
     <div class="d-flex justify-content-center container mt-5">
         <br>
         <a href="<?php echo $pagina; ?>" class="btn btn-secondary">Volver al formulario</a>
