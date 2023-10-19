@@ -43,10 +43,20 @@ foreach ($lines as $line) {
                 <label for="password">Contraseña:</label>
                 <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required value="<?php echo $opciones_defecto['password']; ?>">
             </div>
-
-
-
+            <form class="form" action="recibe_datos.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fichero1">Fichero 1:</label>
+                <input type="file" class="form-control" id="fichero1" name="fichero1">
+            </div>
+            <div class="form-group">
+                <label for="fichero2">Fichero 2:</label>
+                <input type="file" class="form-control" id="fichero2" name="fichero2">
+            </div>
             <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
+            </form>
+
+
+
         </form>
     </div>
 </body>
