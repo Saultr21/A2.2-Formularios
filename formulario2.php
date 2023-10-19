@@ -8,12 +8,14 @@
         <title>Formulario 2</title>
 
         <?php
-        $opciones_defecto = array (
-            "edad" => 18,
-            "pais" => "españa",
-            "curso1" => "DSW",
-            "curso2" => "DEW",
-        );
+        $file = file_get_contents('fichero_form2.txt', true);
+        $var_file = explode("/",$file);
+        $opciones_defecto = [];
+        foreach($var_file as $v)
+        {
+            $palabra=explode('=',$v);
+            $opciones_defecto[trim($palabra[0])] = trim($palabra[1]);
+        }
 
         $edad_defecto = $opciones_defecto["edad"];
 

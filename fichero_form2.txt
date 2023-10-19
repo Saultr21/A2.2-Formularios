@@ -1,0 +1,1 @@
+edad=18/pais=españa/curso1=DSW/curso2=DEW
