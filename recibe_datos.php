@@ -59,6 +59,7 @@
             if (!empty($errorPassword)) {
                 $errores .= $errorPassword . "<br>";
             }
+
             if (empty($errores)) {
                 echo "Datos recibidos correctamente:<br>";
                 echo "Nombre: " . htmlspecialchars($nombre) . "<br>";
@@ -107,7 +108,6 @@
             $asignaturas_sting = implode(",", $asignaturas);
             return $asignaturas_sting;
         }
-
 
     
     ?>
