@@ -127,9 +127,9 @@
                 <input type="checkbox" id="dpl" name="dpl" <?php echo $curso_dpl?>> <br>
                 </p>
 
-                <form action="__URL__" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                    Enviar este fichero: <input name="fichero_usuario" type="file" />
+                <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="myfile" name="archivo"> 
                     <input type="submit" value="Enviar fichero" />
                 </form>
 
