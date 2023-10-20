@@ -20,7 +20,7 @@ foreach ($lines as $line) {
 
 <body class="d-flex align-items-center">
     <div class="d-flex justify-content-center container formulario mt-5">
-        <form class="form" action="recibe_datos.php" method="get" enctype="multipart/form-data">
+        <form class="form" action="recibe_datos.php" method="post" enctype="multipart/form-data">
             <p class="form-title">Formulario 1</p>
             <input type="hidden" name="pagina_actual" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <div class="form-group">
@@ -43,7 +43,6 @@ foreach ($lines as $line) {
                 <label for="password">Contraseña:</label>
                 <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required value="<?php echo $opciones_defecto['password']; ?>">
             </div>
-            <form class="form" action="recibe_datos.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="fichero1">Fichero 1:</label>
                 <input type="file" class="form-control" id="fichero1" name="fichero1">
