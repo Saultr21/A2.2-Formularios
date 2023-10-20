@@ -8,7 +8,7 @@
         <title>Formulario 2</title>
 
         <?php
-        $file = file_get_contents('fichero_form2.txt', true);
+        $file = file_get_contents('valores2.txt', true);
         $var_file = explode("/",$file);
         $opciones_defecto = [];
         foreach($var_file as $v)
@@ -128,9 +128,9 @@
                 </p>
 
                 <label for="myfile">DNI en pdf:</label>
-                <input type="file" id="myfile" name="archivo[]"> 
+                <input type="file" id="myfile" name="fichero1"> <br>
                 <label for="myfile">Notas anterior curso:</label>
-                <input type="file" id="myfile" name="archivo[]"> 
+                <input type="file" id="myfile" name="fichero2"> 
 
                 <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
             </form>

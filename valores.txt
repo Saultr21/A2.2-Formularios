@@ -3,3 +3,7 @@ apellidos=Apellidos
 phone=555111222
 email=correo@gmail.com
 password=contraseña
+edad=18
+pais=españa
+curso1=DSW
+curso2=DEW
