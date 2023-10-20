@@ -89,7 +89,7 @@
     </head>
     <body class="d-flex align-items-center">  
         <div  class="d-flex justify-content-center container formulario mt-5">
-            <form class="form" action="recibe_datos.php" method="get">
+            <form class="form" action="recibe_datos.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="pagina_actual" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
                 <p>Sexo:
                 <select name="sexo" id="sexo">
@@ -127,11 +127,10 @@
                 <input type="checkbox" id="dpl" name="dpl" <?php echo $curso_dpl?>> <br>
                 </p>
 
-                <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
-                <label for="myfile">Select a file:</label>
-                <input type="file" id="myfile" name="archivo"> 
-                    <input type="submit" value="Enviar fichero" />
-                </form>
+                <label for="myfile">DNI en pdf:</label>
+                <input type="file" id="myfile" name="archivo[]"> 
+                <label for="myfile">Notas anterior curso:</label>
+                <input type="file" id="myfile" name="archivo[]"> 
 
                 <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
             </form>
