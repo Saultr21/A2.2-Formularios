@@ -10,18 +10,17 @@
 </head>
 
 <?php
-$opciones_defecto = array (
-    "nombre" => "Nombre",
-    "apellidos" => "Apellidos",
-    "phone" => "555111222",
-    "email" => "correo@gmail.com",
-    "password" => "contraseña",
-);
+$opciones_defecto = [];
+$lines = file('valores.txt');
+foreach ($lines as $line) {
+    list($key, $value) = explode('=', trim($line));
+    $opciones_defecto[$key] = $value;
+}
 ?>
 
 <body class="d-flex align-items-center">
     <div class="d-flex justify-content-center container formulario mt-5">
-        <form class="form" action="recibe_datos.php" method="get">
+        <form class="form" action="recibe_datos.php" method="post" enctype="multipart/form-data">
             <p class="form-title">Formulario 1</p>
             <input type="hidden" name="pagina_actual" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
             <div class="form-group">
@@ -44,8 +43,19 @@ $opciones_defecto = array (
                 <label for="password">Contraseña:</label>
                 <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required value="<?php echo $opciones_defecto['password']; ?>">
             </div>
-
+            <div class="form-group">
+                <label for="fichero1">Fichero 1:</label>
+                <input type="file" class="form-control" id="fichero1" name="fichero1">
+            </div>
+            <div class="form-group">
+                <label for="fichero2">Fichero 2:</label>
+                <input type="file" class="form-control" id="fichero2" name="fichero2">
+            </div>
             <button type="submit" class="submit btn btn-primary mt-3">Enviar</button>
+            </form>
+
+
+
         </form>
     </div>
 </body>
