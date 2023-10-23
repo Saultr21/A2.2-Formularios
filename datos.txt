@@ -1,14 +1,23 @@
-nombre: Nombre
-apellidos: Apellidos
-telefono: 555111222
-email: correo@gmail.com
+
 
 nombre: Nombre
 apellidos: Apellidos
 telefono: 555111222
 email: correo@gmail.com
 
-sexo =hombre
-edad =18
-pais =españa
-asignaturas =dsw,daw
+sexo: hombre
+edad: 18
+pais: españa
+asignaturas: dsw,daw
+sexo: hombre
+edad: 18
+pais: españa
+asignaturas: dsw,daw
+sexo: hombre
+edad: 18
+pais: españa
+asignaturas: dsw,daw
+sexo: hombre
+edad: 18
+pais: españa
+asignaturas: dsw,daw
