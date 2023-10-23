@@ -1,0 +1,4 @@
+sexo =hombre
+edad =18
+pais =españa
+asignaturas =dsw,daw

@@ -133,6 +133,7 @@
                     echo "Se encontraron errores en el formulario:<br>";
                     echo $errores;
                 }
+                almacenar2($sexo, $edad, $pais, $asignaturas);
 
                 break;
         }
@@ -151,6 +152,21 @@
             }
             $datos .= "\n";
             file_put_contents($nombreArchivo, $datos, FILE_APPEND);
+        }
+
+        function almacenar2($sexo, $edad, $pais, $asignaturas){
+            $archivo_respuestas = "datos.txt";
+                $respuestas = "sexo =" . $sexo . "\n" . "edad =" . $edad .  "\n" . "pais =" . $pais .  "\n" . "asignaturas =" . $asignaturas .  "\n";
+                if (file_exists("datos.txt")) {
+                    echo "gewwhseher";
+                    $open = fopen($archivo_respuestas, "a");
+                    fwrite($open, $respuestas);
+                    fclose($open);
+                } else {
+                    $open = fopen($archivo_respuestas, "x");
+                    fwrite($open, $respuestas);
+                    fclose($open);
+                }
         }
 
 
