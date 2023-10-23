@@ -92,6 +92,15 @@
                     echo "Apellidos: " . htmlspecialchars($apellidos) . "<br>";
                     echo "Teléfono: " . htmlspecialchars($telefono) . "<br>";
                     echo "Email: " . htmlspecialchars($email) . "<br>";
+                    $valores = array(
+                        'nombre' => $nombre,
+                        'apellidos' => $apellidos,
+                        'telefono' => $telefono,
+                        'email' => $email
+                    );
+                    almacenar1($valores);
+
+
                 } else {
                     echo "Se encontraron errores en el formulario:<br>";
                     echo $errores;
@@ -119,6 +128,7 @@
                     echo "Edad: " . htmlspecialchars($edad) . "<br>";
                     echo "País: " . htmlspecialchars($pais) . "<br>";
                     echo "Asignaturas: " . htmlspecialchars($asignaturas) . "<br>";
+                    
                 } else {
                     echo "Se encontraron errores en el formulario:<br>";
                     echo $errores;
@@ -131,6 +141,16 @@
         {
             $asignaturas_sting = implode(",", $asignaturas);
             return $asignaturas_sting;
+        }
+
+        function almacenar1($valores){
+            $nombreArchivo = "datos.txt";
+            $datos = "";
+            foreach ($valores as $clave => $valor) {
+                $datos .= htmlspecialchars($clave) . ": " . htmlspecialchars($valor) . "\n";
+            }
+            $datos .= "\n";
+            file_put_contents($nombreArchivo, $datos, FILE_APPEND);
         }
 
 
