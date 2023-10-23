@@ -156,9 +156,8 @@
 
         function almacenar2($sexo, $edad, $pais, $asignaturas){
             $archivo_respuestas = "datos.txt";
-                $respuestas = "sexo =" . $sexo . "\n" . "edad =" . $edad .  "\n" . "pais =" . $pais .  "\n" . "asignaturas =" . $asignaturas .  "\n";
+                $respuestas = "sexo: " . $sexo . "\n" . "edad: " . $edad .  "\n" . "pais: " . $pais .  "\n" . "asignaturas: " . $asignaturas .  "\n";
                 if (file_exists("datos.txt")) {
-                    echo "gewwhseher";
                     $open = fopen($archivo_respuestas, "a");
                     fwrite($open, $respuestas);
                     fclose($open);
